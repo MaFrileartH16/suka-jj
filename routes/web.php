@@ -135,8 +135,13 @@
           ]
         ]);
       } catch (Exception $e) {
-        // Tampilkan detail error dan hentikan eksekusi
-        dd($e);
+        // Log the error (optional)
+        \Log::error('Dashboard error: ' . $e->getMessage());
+
+        // Return a generic error response or redirect
+        return Inertia::render('Error', [
+          'message' => 'Terjadi kesalahan saat memuat dashboard. Silakan coba lagi nanti.',
+        ]);
       }
     })->name('dashboard');
     
