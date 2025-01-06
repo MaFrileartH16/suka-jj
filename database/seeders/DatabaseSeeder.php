@@ -21,18 +21,18 @@
       ]);
       
       $this->call([
-        CriteriaSeeder::class,
+        CoachSeeder::class,
+        AthleteSeeder::class,
+        ExerciseSeeder::class,
+//          ExerciseEvaluationSeeder::class,
+        TournamentSeeder::class,
+        HistorySeeder::class,
       ]);
       
-      if (env('WITH_FAKER')) {
-        $this->call([
-          CoachSeeder::class,
-          AthleteSeeder::class,
-          ExerciseSeeder::class,
-//          ExerciseEvaluationSeeder::class,
-          TournamentSeeder::class,
-          HistorySeeder::class,
-        ]);
-      }
+//      if (env('WITH_FAKER')) {
+//        $this->call([
+//
+//        ]);
+//      }
     }
   }
